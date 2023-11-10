@@ -20,7 +20,7 @@ namespace SignalR.BusinessLayer.Concrete
 
         public void TAdd(Product entity)
         {
-          _productDal.Add(entity);
+            _productDal.Add(entity);
         }
 
         public void TDelete(Product entity)
@@ -30,12 +30,17 @@ namespace SignalR.BusinessLayer.Concrete
 
         public Product TGetByID(int id)
         {
-          return _productDal.GetByID(id);
+            return _productDal.GetByID(id);
         }
 
         public List<Product> TGetListAll()
         {
-          return _productDal.GetListAll();
+            return _productDal.GetListAll();
+        }
+
+        public List<Product> TGetProductsWithCategories()
+        {
+            return _productDal.GetProductsWithCategories();
         }
 
         public void TUpdate(Product entity)
