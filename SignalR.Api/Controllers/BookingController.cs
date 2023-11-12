@@ -37,6 +37,7 @@ namespace SignalR.Api.Controllers
                 Name = createBookingDto.Name,
                 PersonCount = createBookingDto.PersonCount,
                 Phone = createBookingDto.Phone,
+                Description = createBookingDto.Description,
             };
 
             _bookingService.TAdd(booking);
@@ -63,13 +64,14 @@ namespace SignalR.Api.Controllers
                 PersonCount = updateBookingDto.PersonCount,
                 Phone = updateBookingDto.Phone,
                 BookingID = updateBookingDto.BookingID,
+                Description = updateBookingDto.Description
             };
             _bookingService.TUpdate(booking);
             return Ok("Rezervasyon başarılı bir şekilde güncellendi");
 
         }
 
-        [HttpGet("GetBooking")]
+        [HttpGet("{id}")]
         public IActionResult GetBooking(int id)
         {
             var value = _bookingService.TGetByID(id);
