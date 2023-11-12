@@ -62,7 +62,7 @@ namespace SignalR.Api.Controllers
             return Ok("Başarılı bir şekilde güncellendi");
         }
 
-        [HttpGet("GetAbout")]
+        [HttpGet("{id}")]
 
         public IActionResult GetById(int id)
         {
