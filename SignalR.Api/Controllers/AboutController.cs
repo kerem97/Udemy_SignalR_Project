@@ -38,7 +38,7 @@ namespace SignalR.Api.Controllers
             return Ok("Başarılı bir şekilde eklendi");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
 
         public IActionResult DeleteAbout(int id)
         {

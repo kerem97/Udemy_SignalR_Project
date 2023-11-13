@@ -38,7 +38,7 @@ namespace SignalR.Api.Controllers
                 Icon = createSocialMediaDto.Icon,
                 Title = createSocialMediaDto.Title,
                 Url = createSocialMediaDto.Url,
-                
+
 
 
             });
@@ -46,7 +46,7 @@ namespace SignalR.Api.Controllers
             return Ok("Sosyal Medya bilgisi başarılı bir şekilde eklendi");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
 
         public IActionResult DeleteSocialMedia(int id)
         {
@@ -71,7 +71,7 @@ namespace SignalR.Api.Controllers
 
         }
 
-        [HttpGet("GetSocialMedia")]
+        [HttpGet("{id}")]
 
         public IActionResult GetSocialMedia(int id)
         {

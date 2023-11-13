@@ -49,7 +49,7 @@ namespace SignalR.Api.Controllers
             return Ok("Öne Çıkan bilgisi başarılı bir şekilde eklendi");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
 
         public IActionResult DeleteFeature(int id)
         {
@@ -77,7 +77,7 @@ namespace SignalR.Api.Controllers
 
         }
 
-        [HttpGet("GetFeature")]
+        [HttpGet("{id}")]
 
         public IActionResult GetFeature(int id)
         {

@@ -43,7 +43,7 @@ namespace SignalR.Api.Controllers
             _bookingService.TAdd(booking);
             return Ok("Rezervasyon bir şekilde eklendi");
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
 
         public IActionResult DeleteBooking(int id)
         {

@@ -44,7 +44,7 @@ namespace SignalR.Api.Controllers
             return Ok("İndirim bilgisi başarılı bir şekilde eklendi");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
 
         public IActionResult DeleteDiscount(int id)
         {
@@ -71,7 +71,7 @@ namespace SignalR.Api.Controllers
 
         }
 
-        [HttpGet("GetDiscount")]
+        [HttpGet("{id}")]
 
         public IActionResult GetDiscount(int id)
         {

@@ -43,7 +43,7 @@ namespace SignalR.Api.Controllers
             return Ok("İletişim bilgisi başarılı bir şekilde eklendi");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
 
         public IActionResult DeleteContact(int id)
         {
@@ -70,7 +70,7 @@ namespace SignalR.Api.Controllers
 
         }
 
-        [HttpGet("GetContact")]
+        [HttpGet("{id}")]
 
         public IActionResult GetContact(int id)
         {
