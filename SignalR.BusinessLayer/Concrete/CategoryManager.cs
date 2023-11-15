@@ -18,29 +18,44 @@ namespace SignalR.BusinessLayer.Concrete
             _categoryDal = categoryDal;
         }
 
+        public int TActiveCategoryCount()
+        {
+            return _categoryDal.ActiveCategoryCount();
+        }
+
         public void TAdd(Category entity)
         {
-           _categoryDal.Add(entity);
+            _categoryDal.Add(entity);
+        }
+
+        public int TCategoryCount()
+        {
+            return _categoryDal.CategoryCount();
         }
 
         public void TDelete(Category entity)
         {
-         _categoryDal.Delete(entity);
+            _categoryDal.Delete(entity);
         }
 
         public Category TGetByID(int id)
         {
-           return _categoryDal.GetByID(id);
+            return _categoryDal.GetByID(id);
         }
 
         public List<Category> TGetListAll()
         {
-          return _categoryDal.GetListAll();
+            return _categoryDal.GetListAll();
+        }
+
+        public int TPassiveCategoryCount()
+        {
+            return _categoryDal.PassiveCategoryCount();
         }
 
         public void TUpdate(Category entity)
         {
-           _categoryDal.Update(entity);
+            _categoryDal.Update(entity);
         }
     }
 }
