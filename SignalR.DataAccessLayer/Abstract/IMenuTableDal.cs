@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SignalR.BusinessLayer.Abstract
+namespace SignalR.DataAccessLayer.Abstract
 {
-    public interface IMoneyCaseService : IGenericService<MoneyCase>
+    public interface IMenuTableDal : IGenericDal<MenuTable>
     {
-        decimal TTotalMoneyCaseAmount();
+        int MenuTableCount();
     }
 }

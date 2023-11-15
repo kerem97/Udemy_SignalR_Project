@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,11 @@ namespace SignalR.EntityLayer.Entities
 
         public string TableNumber { get; set; }
         public string Description { get; set; }
-        public DateTime OrderDate { get; set; }
+
+        [Column(TypeName = "Date")]
+        public DateTime OrderedDate { get; set; }
+
+
         public decimal TotalPrice { get; set; }
 
         public List<OrderDetail> OrderDetails { get; set; }

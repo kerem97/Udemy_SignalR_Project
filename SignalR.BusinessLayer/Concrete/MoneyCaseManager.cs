@@ -20,27 +20,32 @@ namespace SignalR.BusinessLayer.Concrete
 
         public void TAdd(MoneyCase entity)
         {
-            throw new NotImplementedException();
+            _moneyCaseDal.Add(entity);
         }
 
         public void TDelete(MoneyCase entity)
         {
-            throw new NotImplementedException();
+            _moneyCaseDal.Delete(entity);
         }
 
         public MoneyCase TGetByID(int id)
         {
-            throw new NotImplementedException();
+            return _moneyCaseDal.GetByID(id);
         }
 
         public List<MoneyCase> TGetListAll()
         {
-            throw new NotImplementedException();
+            return _moneyCaseDal.GetListAll();
+        }
+
+        public decimal TTotalMoneyCaseAmount()
+        {
+            return _moneyCaseDal.TotalMoneyCaseAmount();
         }
 
         public void TUpdate(MoneyCase entity)
         {
-            throw new NotImplementedException();
+            _moneyCaseDal.Update(entity);
         }
     }
 }
