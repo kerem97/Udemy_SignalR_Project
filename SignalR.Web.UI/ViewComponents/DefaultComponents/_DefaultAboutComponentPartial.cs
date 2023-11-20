@@ -1,25 +1,26 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using SignalR.Web.UI.Dtos.ContactDtos;
+using SignalR.Web.UI.Dtos.AboutDtos;
+using SignalR.Web.UI.Dtos.SliderDtos;
 
-namespace SignalR.Web.UI.ViewComponents.UILayoutComponents
+namespace SignalR.Web.UI.ViewComponents.DefaultComponents
 {
-    public class _UILayoutFooterComponentPartial : ViewComponent
+    public class _DefaultAboutComponentPartial : ViewComponent
     {
         private readonly IHttpClientFactory _httpClientFactory;
 
-        public _UILayoutFooterComponentPartial(IHttpClientFactory httpClientFactory)
+        public _DefaultAboutComponentPartial(IHttpClientFactory httpClientFactory)
         {
             _httpClientFactory = httpClientFactory;
         }
         public async Task<IViewComponentResult> InvokeAsync()
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("https://localhost:7294/api/Contact");
+            var responseMessage = await client.GetAsync("https://localhost:7294/api/About");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<List<ResultContactDto>>(jsonData);
+                var values = JsonConvert.DeserializeObject<List<ResultAboutDto>>(jsonData);
                 return View(values);
             }
             return View();
