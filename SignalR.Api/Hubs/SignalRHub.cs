@@ -86,6 +86,13 @@ namespace SignalR.Api.Hubs
 
         }
 
+        public async Task GetBookingList()
+        {
+            var values = _bookingService.TGetListAll();
+
+            await Clients.All.SendAsync("ReceiveBookingList", values);
+        }
+
 
     }
 }
