@@ -34,9 +34,6 @@ namespace SignalR.Web.UI.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateAbout(CreateAboutDto createAboutDto)
         {
-
-
-
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(createAboutDto);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
