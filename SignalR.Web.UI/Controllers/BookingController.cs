@@ -84,5 +84,20 @@ namespace SignalR.Web.UI.Controllers
             }
             return View();
         }
+
+        public async Task<IActionResult> BookingStatusApproved(int id)
+        {
+            var client = _httpClientFactory.CreateClient();
+            await client.GetAsync($"https://localhost:7294/api/Booking/BookingStatusApproved/{id}");
+            return RedirectToAction("Index");
+        }
+
+        public async Task<IActionResult> BookingStatusCancelled(int id)
+        {
+            var client = _httpClientFactory.CreateClient();
+            await client.GetAsync($"https://localhost:7294/api/Booking/BookingStatusCancelled/{id}");
+            return RedirectToAction("Index");
+        }
+
     }
 }
