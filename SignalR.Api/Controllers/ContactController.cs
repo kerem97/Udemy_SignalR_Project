@@ -37,7 +37,13 @@ namespace SignalR.Api.Controllers
                 FooterDescription = createContactDto.FooterDescription,
                 Location = createContactDto.Location,
                 Mail = createContactDto.Mail,
-                PhoneNumber = createContactDto.PhoneNumber
+                PhoneNumber = createContactDto.PhoneNumber,
+                OpenHours = createContactDto.OpenHours,
+                OpenDaysDescription = createContactDto.OpenDaysDescription,
+                OpenDays = createContactDto.OpenDays,
+                FooterTitle = createContactDto.FooterTitle
+
+
             });
 
             return Ok("İletişim bilgisi başarılı bir şekilde eklendi");
@@ -62,7 +68,11 @@ namespace SignalR.Api.Controllers
                 Location = updateContactDto.Location,
                 Mail = updateContactDto.Mail,
                 PhoneNumber = updateContactDto.PhoneNumber,
-                ContactID = updateContactDto.ContactID
+                ContactID = updateContactDto.ContactID,
+                FooterTitle = updateContactDto.FooterTitle,
+                OpenDays = updateContactDto.OpenDays,
+                OpenDaysDescription = updateContactDto.OpenDaysDescription,
+                OpenHours = updateContactDto.OpenHours
 
             });
 
